@@ -1,0 +1,12 @@
+@import "../App.scss";
+
+.list {
+  list-style-type: none;
+  li {
+    color: $red-color;
+    a {
+      text-decoration: none;
+      color: $red-color;
+    }
+  }
+}

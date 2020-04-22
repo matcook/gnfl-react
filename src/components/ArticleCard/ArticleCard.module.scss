@@ -1,0 +1,44 @@
+@import "../../App.scss";
+
+.grid {
+  display: flex;
+}
+
+.horizontalCard,
+.verticalCard {
+  box-shadow: $box-shadow;
+}
+
+.horizontalCard {
+  display: flex;
+  .image {
+    width: 250px;
+    height: 150px;
+    a {
+      width: 100%;
+      height: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .content {
+    padding: 20px;
+    h3 {
+      padding: 0;
+    }
+    p {
+      display: none;
+      @include breakpoint("small") {
+        display: block;
+      }
+    }
+
+    .button {
+      text-decoration: none;
+      color: $red-color;
+    }
+  }
+  margin-bottom: 30px;
+}
