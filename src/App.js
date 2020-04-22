@@ -1,15 +1,15 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
-import Home from "./containers/Home";
-import Fixtures from "./containers/Fixtures";
-import News from "./containers/News";
+import Home from "./pages/Home";
+import Fixtures from "./pages/Fixtures";
+import News from "./pages/News";
 import ArticleTemplate from "./components/ArticleTemplate";
-import Gallery from "./containers/Gallery";
-import Resources from "./containers/Resources";
-import Contact from "./containers/Contact";
+import Gallery from "./pages/Gallery";
+import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
 
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {

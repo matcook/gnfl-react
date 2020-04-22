@@ -1,0 +1,170 @@
+$breakpoints: (
+  "x-small": (
+    min-width: 500px,
+  ),
+  "small": (
+    min-width: 767px,
+  ),
+  "medium": (
+    min-width: 992px,
+  ),
+  "large": (
+    min-width: 1200px,
+  ),
+) !default;
+
+$red-color: #d32f2f;
+$blue-color: #303f9f;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+//MIXINS
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: whitesmoke;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 20px 0;
+  color: $blue-color;
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex-grow: 1;
+}
+
+.container {
+  padding: 0 10px;
+  max-width: 1250px;
+  margin: 0 auto;
+  @include breakpoint("large") {
+    padding: 0 25px;
+  }
+}
+
+.activeLink {
+  background: #ec1616;
+}
+
+// NEWS ARTICLE CARD STYLING
+
+.articleCard {
+  background: white;
+  display: flex;
+  margin-bottom: 20px;
+  // padding: 20px;
+  box-shadow: $box-shadow;
+  .imageContainer {
+    width: 20%;
+    img {
+      width: 120px;
+      height: 100%;
+    }
+  }
+  .articleCardBody {
+    padding: 20px;
+    a {
+      text-decoration: none;
+      color: $red-color;
+      transition: color 200ms ease-in-out;
+      &:hover {
+        color: $blue-color;
+      }
+    }
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+table {
+  box-shadow: $box-shadow;
+  margin-bottom: 40px;
+  font-size: 0.8em;
+  @include breakpoint("small") {
+    font-size: 1em;
+  }
+  thead {
+    th {
+      background: $red-color;
+    }
+  }
+  tr {
+    background: white;
+    color: black;
+
+    &:nth-of-type(odd) {
+      background-color: rgb(236, 236, 236);
+    }
+
+    td {
+      padding: 10px 5px;
+      text-align: center;
+      &:nth-of-type(1) {
+        text-align: left;
+      }
+    }
+    th {
+      padding: 15px 5px;
+      color: white;
+    }
+    th:nth-of-type(1) {
+      text-align: left;
+    }
+  }
+}
+
+input,
+textarea {
+  font-size: 1em;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 5px;
+}
+
+.white {
+  color: white !important;
+}
+
+.text-border {
+  text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black,
+    -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black,
+    0.05em 0.05em black;
+}

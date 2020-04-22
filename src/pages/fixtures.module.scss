@@ -1,0 +1,27 @@
+@import "../App.scss";
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-direction: column;
+  @include breakpoint("small") {
+    flex-direction: row;
+  }
+}
+
+.seasonDropdown,
+.gradeDropdown {
+  margin-bottom: 20px;
+  width: 100%;
+  @include breakpoint("small") {
+    width: 20%;
+  }
+}
+
+.gradeDropdown {
+  margin-bottom: -20px;
+  @include breakpoint("small") {
+    margin-bottom: 20px;
+  }
+}

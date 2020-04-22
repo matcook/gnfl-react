@@ -1,0 +1,28 @@
+.slider {
+  width: 100%;
+  position: relative;
+  height: 60vh;
+  z-index: -1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+  height: 100%;
+  width: 100%;
+}
+
+.active {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}

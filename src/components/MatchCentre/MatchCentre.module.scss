@@ -1,0 +1,35 @@
+@import "../../App.scss";
+.matchCentre {
+  height: auto;
+  padding: 0 0 30px 0;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.upcoming {
+  width: 100%;
+
+  @include breakpoint("medium") {
+    width: 60%;
+    padding-right: 20px;
+  }
+  h2 {
+    color: white;
+  }
+}
+
+.ladder {
+  width: 100%;
+  @include breakpoint("medium") {
+    width: 40%;
+  }
+  h2 {
+    color: white;
+  }
+}
+.dropdown {
+  margin-bottom: 20px;
+}

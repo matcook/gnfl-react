@@ -1,0 +1,125 @@
+@import "../../App.scss";
+
+.navbar {
+  z-index: 5;
+  position: sticky;
+  top: 0;
+  background: $red-color;
+  width: 100%;
+  color: white;
+  box-shadow: $box-shadow;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    .desktopNav {
+      display: none;
+      @include breakpoint("small") {
+        display: flex;
+      }
+      list-style-type: none;
+      li {
+        transition: background-color 0.2s;
+        a {
+          color: white;
+          padding: 20px 10px;
+          display: block;
+          text-decoration: none;
+          @include breakpoint("medium") {
+            padding: 20px;
+          }
+        }
+        &:hover {
+          background: #ec1616;
+        }
+      }
+    }
+  }
+}
+
+.mobileNavButton {
+  padding: 20px;
+  transition: background-color 0.2s;
+  &:hover {
+    cursor: pointer;
+    background: #ec1616;
+  }
+  @include breakpoint("small") {
+    display: none;
+  }
+}
+
+.mobileNav {
+  z-index: 10;
+  overflow: hidden;
+  transition: transform 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $red-color;
+  height: 100vh;
+  box-shadow: $box-shadow;
+  li {
+    border-bottom: 1px solid rgba(134, 0, 0, 0.3);
+    a {
+      padding: 10px 50px 10px 20px;
+      transition: background-color 0.2s;
+      display: block;
+      text-decoration: none;
+      color: white;
+      &:hover {
+        background: #ec1616;
+      }
+    }
+  }
+}
+
+.backdrop {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 20, 0.3);
+  z-index: 5;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.2s;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.closed {
+  transform: translateX(-100%);
+}
+
+.logo {
+  margin: auto 0;
+  img {
+    // height: 100%;
+    width: 80px;
+  }
+  &:nth-of-type(1) {
+    img {
+      width: 100px;
+    }
+  }
+  @include breakpoint("small") {
+    img {
+      // height: 100%;
+      width: 100px;
+    }
+    &:nth-of-type(1) {
+      img {
+        width: 120px;
+      }
+    }
+  }
+}

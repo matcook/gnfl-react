@@ -1,5 +1,22 @@
 import React, { useState, useEffect } from "react";
-import data from "../data.json";
+import { useQuery } from "@apollo/react-hooks";
+import { gql } from "apollo-boost";
+
+const news = gql`
+  {
+    articles(sort: "Date:asc") {
+      id
+      Title
+      Date
+      Body
+      Slug
+      Image {
+        name
+        url
+      }
+    }
+  }
+`;
 
 const ArticleTemplate = (props) => {
   const [article, setArticle] = useState({
@@ -13,12 +30,26 @@ const ArticleTemplate = (props) => {
       name: "",
     },
   });
+  const { loading, error, data } = useQuery(news);
+  const fetchData = async () => {
+    const slug = props.match.params.slug;
+
+    if (loading) {
+      return <span>Loading...</span>;
+    }
+    if (error) {
+      console.error(error);
+    }
+    if (data) {
+      const article = data.articles.find((article) => article.Slug === slug);
+      setArticle(article);
+    }
+  };
 
   useEffect(() => {
-    const slug = props.match.params.slug;
-    const article = data.find((article) => article.Slug === slug);
-    setArticle(article);
-  }, [props.match.params.slug]);
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="container">
