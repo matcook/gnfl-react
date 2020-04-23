@@ -18,7 +18,6 @@ const Contact = () => {
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            netlify
           >
             <input type="hidden" name="form-name" value="contact" />
             <Select
@@ -29,7 +28,6 @@ const Contact = () => {
               id="enquiry"
             />
             <div className={styles.formComponent}>
-              {" "}
               <label htmlFor="name">Name</label>
               <input type="text" id="name" name="name" />
             </div>
