@@ -5,7 +5,7 @@ import { gql } from "apollo-boost";
 
 const news = gql`
   {
-    articles(sort: "Date:asc") {
+    articles(sort: "Date:asc", limit: 10) {
       id
       Title
       Date
@@ -33,7 +33,7 @@ const News = () => {
     } else {
       return (
         <div>
-          <h3>Homepage News</h3>
+          <h3>Latest News</h3>
           <span>Loading...</span>
         </div>
       );
@@ -57,10 +57,14 @@ const News = () => {
     } else {
       return (
         <div className="container">
-          <h2>News</h2>
-          {data.articles.map((article) => (
-            <ArticleCard key={article.id} data={article} />
-          ))}
+          <h2>Latest News</h2>
+          {data.articles.map((article, index) => {
+            if (index < 3) {
+              return <ArticleCard key={article.id} data={article} />;
+            } else {
+              return null;
+            }
+          })}
         </div>
       );
     }
