@@ -3,26 +3,51 @@ import { Link } from "react-router-dom";
 import styles from "./ArticleCard.module.scss";
 
 const ArticleCard = ({ data }) => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const articleDate = new Date(data.Date);
+
+  const month = months[articleDate.getMonth()];
+  const year = articleDate.getFullYear();
+
   const excerpt = data.Body.split(" ").splice(0, 30).join(" ").concat("...");
-  // const excerpt = data.Body.substr(0, 150).concat("...");
+  const imageUrl = `${process.env.REACT_APP_GNFL_API_URL}${data.Image.url}`;
+  console.log(imageUrl);
   return (
-    <div className={styles.horizontalCard} key={data.id}>
-      <div className={styles.image}>
-        <Link to={`/news/${data.Slug}`}>
-          <img
-            src={`${process.env.REACT_APP_GNFL_API_URL}${data.Image.url}`}
-            alt={`${process.env.REACT_APP_GNFL_API_URL}${data.Image.name}`}
-          />
-        </Link>
+    <Link to={`/news/${data.Slug}`}>
+      <div className={styles.blogCard}>
+        <div className={styles.meta}>
+          <div
+            className={styles.photo}
+            style={{
+              backgroundImage: `url(${imageUrl}`,
+            }}
+          ></div>
+        </div>
+        <div className={styles.description}>
+          <h3>{data.Title}</h3>
+
+          <span>{`${month} ${articleDate.getDate()}, ${year}`}</span>
+          <p>{excerpt}</p>
+          <p className={styles.readMore}>
+            <Link to={`/news/${data.Slug}`}>Read More</Link>
+          </p>
+        </div>
       </div>
-      <div className={styles.content}>
-        <h3>{data.Title}</h3>
-        <p>{excerpt}</p>
-        <Link className={styles.button} to={`/news/${data.Slug}`}>
-          Read More
-        </Link>
-      </div>
-    </div>
+    </Link>
   );
 };
 

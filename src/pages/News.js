@@ -57,11 +57,10 @@ const News = () => {
     } else {
       return (
         <div className="container">
-          <h3>Homepage News</h3>
+          <h2>News</h2>
           {data.articles.map((article) => (
             <ArticleCard key={article.id} data={article} />
           ))}
-          <p>ijasfgbiahsbfiuasbdfiabsdi</p>
         </div>
       );
     }

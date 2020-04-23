@@ -1,44 +1,125 @@
 @import "../../App.scss";
 
-.grid {
+.blogCard {
   display: flex;
-}
-
-.horizontalCard,
-.verticalCard {
+  flex-direction: column;
+  margin: 0 auto 1rem;
   box-shadow: $box-shadow;
-}
+  margin-bottom: 1.6%;
+  background: white;
+  line-height: 1.4;
+  overflow: hidden;
+  z-index: 0;
 
-.horizontalCard {
-  display: flex;
-  .image {
-    width: 250px;
-    height: 150px;
-    a {
-      width: 100%;
-      height: 100%;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-  .content {
-    padding: 20px;
-    h3 {
-      padding: 0;
-    }
-    p {
-      display: none;
-      @include breakpoint("small") {
-        display: block;
-      }
-    }
-
-    .button {
-      text-decoration: none;
+  //   width: 1200px;
+  a {
+    color: inherit;
+    &:hover {
       color: $red-color;
     }
   }
-  margin-bottom: 30px;
+  &:hover {
+    cursor: pointer;
+    h3 {
+      color: $red-color;
+    }
+    .photo {
+      transform: scale(1.1);
+    }
+  }
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+  .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+  }
+
+  .description {
+    // display: none;
+    padding: 0.75rem 1rem;
+    background: white;
+    position: relative;
+    z-index: 1;
+    h1,
+    h2 {
+      font-family: Poppins, sans-serif;
+    }
+    h3 {
+      padding: 0;
+      line-height: 1;
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    span {
+      font-size: 0.8em;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: gray;
+      margin-top: 5px;
+    }
+    .readMore {
+      margin-top: 0;
+      text-align: right;
+      a {
+        color: $red-color;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        &:after {
+          content: "\f061";
+          font-family: FontAwesome;
+          margin-left: -10px;
+          opacity: 0;
+          vertical-align: middle;
+          transition: margin 0.3s, opacity 0.3s;
+        }
+
+        &:hover:after {
+          margin-left: 5px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  p {
+    display: none;
+    position: relative;
+  }
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    max-width: 100%;
+    .meta {
+      flex-basis: 25%;
+      height: auto;
+    }
+    .description {
+      flex-basis: 75%;
+      h3 {
+        padding-top: 10px;
+      }
+      p {
+        display: block;
+      }
+    }
+    &.alt {
+      flex-direction: row-reverse;
+      .description {
+        &:before {
+          left: inherit;
+          right: -10px;
+          transform: skew(3deg);
+        }
+      }
+    }
+  }
 }
