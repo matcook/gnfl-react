@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
+import { MdMenu } from "react-icons/md";
 
 const logoQuery = gql`
   {
@@ -156,6 +157,7 @@ const Navbar = () => {
             onClick={toggleSideNav}
             onKeyDown={toggleSideNav}
           >
+            <MdMenu size={32} />
             Menu
           </div>
           <div className={styles.logo}>

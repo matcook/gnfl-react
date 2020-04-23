@@ -37,6 +37,7 @@
       object-position: 50% 20%;
       box-shadow: $box-shadow;
       transition: transform 0.2s;
+      backface-visibility: hidden;
     }
   }
 }

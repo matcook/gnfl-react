@@ -39,6 +39,12 @@
 .mobileNavButton {
   padding: 20px;
   transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    margin-right: 5px;
+  }
   &:hover {
     cursor: pointer;
     background: #ec1616;

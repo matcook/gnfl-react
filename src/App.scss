@@ -86,34 +86,6 @@ a {
   background: #ec1616;
 }
 
-// NEWS ARTICLE CARD STYLING
-
-.articleCard {
-  background: white;
-  display: flex;
-  margin-bottom: 20px;
-  // padding: 20px;
-  box-shadow: $box-shadow;
-  .imageContainer {
-    width: 20%;
-    img {
-      width: 120px;
-      height: 100%;
-    }
-  }
-  .articleCardBody {
-    padding: 20px;
-    a {
-      text-decoration: none;
-      color: $red-color;
-      transition: color 200ms ease-in-out;
-      &:hover {
-        color: $blue-color;
-      }
-    }
-  }
-}
-
 .hidden {
   overflow: hidden;
 }
