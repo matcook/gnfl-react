@@ -4,7 +4,7 @@ import "./App.scss";
 import Home from "./pages/Home";
 import Fixtures from "./pages/Fixtures";
 import News from "./pages/News";
-import ArticleTemplate from "./components/ArticleTemplate";
+import ArticleTemplate from "./components/ArticleTemplate/ArticleTemplate";
 import Gallery from "./pages/Gallery";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";

@@ -69,15 +69,22 @@
     .readMore {
       margin-top: 0;
       text-align: right;
-      a {
+      span {
+        font-size: 0.9em;
+        font-weight: 600;
         color: $red-color;
         display: inline-block;
         position: relative;
         text-decoration: none;
         &:after {
           content: "\f061";
+          font-weight: 400;
           font-family: FontAwesome;
           margin-left: -10px;
+          display: inline-block;
+          vertical-align: middle;
+          height: 20px;
+          line-height: normal;
           opacity: 0;
           vertical-align: middle;
           transition: margin 0.3s, opacity 0.3s;

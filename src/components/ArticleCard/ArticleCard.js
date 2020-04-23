@@ -25,7 +25,6 @@ const ArticleCard = ({ data }) => {
 
   const excerpt = data.Body.split(" ").splice(0, 30).join(" ").concat("...");
   const imageUrl = `${process.env.REACT_APP_GNFL_API_URL}${data.Image.url}`;
-  console.log(imageUrl);
   return (
     <Link to={`/news/${data.Slug}`}>
       <div className={styles.blogCard}>
@@ -43,7 +42,7 @@ const ArticleCard = ({ data }) => {
           <span>{`${month} ${articleDate.getDate()}, ${year}`}</span>
           <p>{excerpt}</p>
           <p className={styles.readMore}>
-            <Link to={`/news/${data.Slug}`}>Read More</Link>
+            <span>Read More</span>
           </p>
         </div>
       </div>
