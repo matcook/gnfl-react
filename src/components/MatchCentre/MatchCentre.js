@@ -79,8 +79,8 @@ const MatchCentre = () => {
     return (
       <div className={styles.matchCentre} style={matchCentreStyles}>
         <div className={`${styles.grid} container`}>
-          <div className={styles.upcoming}>
-            <h2>Upcoming Games</h2>
+          <h2 className="white">Match Centre</h2>
+          <div className={styles.dropdownContainer}>
             <Select
               options={gradeOptions}
               className={styles.dropdown}
@@ -91,10 +91,6 @@ const MatchCentre = () => {
                 console.log(value);
               }}
             />
-            <span className="white">Loading...</span>
-          </div>
-          <div className={styles.ladder}>
-            <h2>Ladder</h2>
             <Select
               options={seasonOptions}
               className={styles.dropdown}
@@ -105,6 +101,13 @@ const MatchCentre = () => {
                 setSeason(value.value);
               }}
             />
+          </div>
+          <div className={styles.upcoming}>
+            <h3>Upcoming Games</h3>
+            <span className="white">Loading...</span>
+          </div>
+          <div className={styles.ladder}>
+            <h3>Ladder</h3>
             <Ladder season={season} grade={grade} />
           </div>
         </div>
@@ -125,8 +128,8 @@ const MatchCentre = () => {
     return (
       <div className={styles.matchCentre} style={matchCentreStyles}>
         <div className={`${styles.grid} container`}>
-          <div className={styles.upcoming}>
-            <h2>Upcoming Games</h2>
+          <h2 className="white">Match Centre</h2>
+          <div className={styles.dropdownContainer}>
             <Select
               options={gradeOptions}
               className={styles.dropdown}
@@ -134,6 +137,17 @@ const MatchCentre = () => {
               defaultValue={{ label: "League", value: "League" }}
               onChange={(value) => setGrade(value.value)}
             />
+            <Select
+              options={seasonOptions}
+              className={styles.dropdown}
+              placeholder="Season..."
+              defaultValue={{ label: season, value: season }}
+              onChange={(value) => setSeason(value.value)}
+            />
+          </div>
+          <div className={styles.upcoming}>
+            <h3>Upcoming Games</h3>
+
             {data.upcoming.length === 0 ? (
               <span className="white">No upcoming matches..</span>
             ) : (
@@ -147,14 +161,8 @@ const MatchCentre = () => {
             )}
           </div>
           <div className={styles.ladder}>
-            <h2>Ladder</h2>
-            <Select
-              options={seasonOptions}
-              className={styles.dropdown}
-              placeholder="Season..."
-              defaultValue={{ label: season, value: season }}
-              onChange={(value) => setSeason(value.value)}
-            />
+            <h3>Ladder</h3>
+
             <Ladder clubs={data.clubs} matches={data.matches} grade={grade} />
           </div>
         </div>
