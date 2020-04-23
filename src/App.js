@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 
 import Layout from "./components/Layout/Layout";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/gallery" component={Gallery} />
           <Route path="/resources" component={Resources} />
           <Route path="/contact" component={Contact} />
+          <Route component={NotFound} />
         </Layout>
       </div>
     </Router>
