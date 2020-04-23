@@ -71,7 +71,7 @@
   justify-content: space-around;
 
   & > div {
-    // width: 100%;
+    width: 100%;
     @include breakpoint("small") {
       width: 50%;
       h2 {
