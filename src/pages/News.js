@@ -5,7 +5,7 @@ import { gql } from "apollo-boost";
 
 const news = gql`
   {
-    articles(sort: "Date:asc", limit: 10) {
+    articles(sort: "Date:desc", limit: 10) {
       id
       Title
       Date

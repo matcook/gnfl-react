@@ -9,8 +9,8 @@
   line-height: 1.4;
   overflow: hidden;
   z-index: 0;
+  color: black;
 
-  //   width: 1200px;
   a {
     color: inherit;
     &:hover {
@@ -44,15 +44,10 @@
   }
 
   .description {
-    // display: none;
     padding: 0.75rem 1rem;
     background: white;
     position: relative;
     z-index: 1;
-    h1,
-    h2 {
-      font-family: Poppins, sans-serif;
-    }
     h3 {
       padding: 0;
       line-height: 1;
@@ -116,6 +111,15 @@
       }
       p {
         display: block;
+        padding-top: 5px;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          display: none;
+        }
       }
     }
     &.alt {
