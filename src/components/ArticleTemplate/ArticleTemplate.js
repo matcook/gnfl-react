@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import showdown from "showdown";
@@ -21,6 +21,9 @@ const news = gql`
 `;
 
 const ArticleTemplate = (props) => {
+  useEffect(() => {
+    document.body.scrollTop = 0;
+  }, []);
   const slug = props.match.params.slug;
   const days = [
     "Sunday",
