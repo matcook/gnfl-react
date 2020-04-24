@@ -52,8 +52,11 @@
   }
 
   textarea {
-    height: 300px;
     resize: none;
+    height: 150px;
+    @include breakpoint("small") {
+      height: 300px;
+    }
   }
 }
 

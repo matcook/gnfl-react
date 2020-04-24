@@ -3,7 +3,6 @@
 .filters {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
   flex-direction: column;
   @include breakpoint("small") {
     flex-direction: row;
@@ -20,7 +19,7 @@
 }
 
 .gradeDropdown {
-  margin-bottom: -20px;
+  margin-bottom: 20px;
   @include breakpoint("small") {
     margin-bottom: 20px;
   }

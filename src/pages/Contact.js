@@ -51,16 +51,16 @@ const Contact = () => {
         <div className={styles.otherContact}>
           <h2>Other Contact Options</h2>
           <h3>Phone</h3>
-          <p>Office: 1234 5678</p>
+          <p>Office: (08) 9956 2183</p>
           <p>Mobile: 0412 345 678</p>
           <h3>Email</h3>
           <p>gnfl@sportshouse.net.au</p>
           <h3>Office Location</h3>
           <p>Sportshouse/Dept Sport and Rec</p>
-          <p>Lot 3/4325 Marine Terrace</p>
+          <p>Level 1, 268-270 Foreshore Drive</p>
           <p>Geraldton WA 6530</p>
           <h3>Postal Address</h3>
-          <p>PO Box 23423532</p>
+          <p>PO Box 135</p>
           <p>Geraldton WA 6530</p>
         </div>
       </div>
