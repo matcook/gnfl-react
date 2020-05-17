@@ -1,12 +1,8 @@
 import React from "react";
-import Select from "react-select";
 import styles from "./contact.module.scss";
 
 const Contact = () => {
-  const queryOptions = [
-    { value: "general", label: "General Enquiry" },
-    { value: "specific", label: "Specific Enquiry" },
-  ];
+
 
   return (
     <div className="container">
@@ -20,13 +16,6 @@ const Contact = () => {
             data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
-            <Select
-              options={queryOptions}
-              placeholder="Enquiry Type..."
-              className={styles.dropdown}
-              name="enquiry"
-              id="enquiry"
-            />
             <div className={styles.formComponent}>
               <label htmlFor="name">Name</label>
               <input type="text" id="name" name="name" />

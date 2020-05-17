@@ -8,6 +8,7 @@ const news = gql`
     articles(sort: "Date:desc", limit: 10) {
       id
       Title
+      Excerpt
       Date
       Body
       Slug
@@ -32,7 +33,7 @@ const News = () => {
       );
     } else {
       return (
-        <div>
+        <div className="container">
           <h3>Latest News</h3>
           <span>Loading...</span>
         </div>
