@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./contact.module.scss";
 
 const Contact = () => {
-
-
   return (
     <div className="container">
       <h1>Contact</h1>
@@ -41,7 +39,7 @@ const Contact = () => {
           <h2>Other Contact Options</h2>
           <h3>Phone</h3>
           <p>Office: (08) 9956 2183</p>
-          <p>Mobile: 0412 345 678</p>
+          <p>Mobile: 0437 039 133</p>
           <h3>Email</h3>
           <p>gnfl@sportshouse.net.au</p>
           <h3>Office Location</h3>
